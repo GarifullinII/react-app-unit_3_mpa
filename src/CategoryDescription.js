@@ -6,6 +6,7 @@ function CategoryDescription() {
 
     return (
         <>
+            <a href="/cat">Назад</a>
             <h1>Category: {Name}</h1>
         </>
     );
