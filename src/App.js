@@ -7,10 +7,16 @@ import CategoryDescription from "./CategoryDescription";
 import Error from "./Error";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
+const navHeader = [
+    {"href": "/", "text": "Главная"},
+    {"href": "/about", "text": "О сайте"},
+    {"href": "/cat", "text": "Категории"}
+]
+
 function App() {
   return (
     <>
-      <Header/>
+      <Header nav = {navHeader}/>
       <Footer/>
         <Router>
             <Switch>
