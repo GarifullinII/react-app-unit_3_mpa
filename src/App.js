@@ -13,20 +13,26 @@ const navHeader = [
     {"href": "/cat", "text": "Категории"}
 ]
 
+const navCat = [
+    {"href": "/notebook", "text": "Ноутбуки"},
+    {"href": "/monitor", "text": "Мониторы"},
+    {"href": "/cellphone", "text":"Мобильные телефоны"}
+]
+
 function App() {
   return (
     <>
-      <Header nav = {navHeader}/>
-      <Footer/>
+      <Header navHeader = {navHeader}/>
         <Router>
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/cat" component={Category} />
+                <Route path="/about" component={About} />
+                <Route exact path="/cat" component={Category}><Category navCat = {navCat}/></Route>
                 <Route path="/cat/:Name" component={CategoryDescription} />
                 <Route component={Error}/>
             </Switch>
         </Router>
+      <Footer/>
     </>
   );
 }

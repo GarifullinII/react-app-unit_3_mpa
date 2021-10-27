@@ -1,16 +1,16 @@
 import {useRouteMatch} from "react-router-dom";
 
-function Category() {
+function Category(props) {
 
     let match = useRouteMatch();
+    let data = props.navCat;
+    const listItem = data.map(item => <li key={item.text}><a href={`${match.url}${item.href}`}>{item.text}</a></li>)
 
     return (
         <>
             <h1>Category</h1>
             <ul>
-                <li><a href={`${match.url}/notebook`}>Ноутбуки</a></li>
-                <li><a href={`${match.url}/monitor`}>Мониторы</a></li>
-                <li><a href={`${match.url}/cellphone`}>Мобильные телефоны</a></li>
+                {listItem}
             </ul>
         </>
     );

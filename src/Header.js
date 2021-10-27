@@ -1,14 +1,16 @@
 function Header(props) {
 
-    let data = props.nav;
+    let data = props.navHeader;
     const listItem = data.map(item => <li key={item.text}><a href={item.href}>{item.text}</a></li>)
 
     return (
-        <nav>
-            <ul>
-                {listItem}
-            </ul>
-        </nav>
+        <>
+            <nav>
+                <ul>
+                    {listItem}
+                </ul>
+            </nav>
+        </>
     );
 }
 
